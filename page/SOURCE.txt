@@ -1,0 +1,19 @@
+Farida Studio 1.0.0
+
+This studio is free software under the GNU Affero General Public License,
+version 3 only (https://www.gnu.org/licenses/agpl-3.0.html). Its source:
+
+  https://github.com/salamaashoush/farida-studio/tree/v1.0.0
+
+It runs the Scratch editor, @scratch/scratch-gui 15.2.0, unmodified, also
+under the AGPL; its source is https://github.com/scratchfoundation/scratch-editor.
+Scratch is a trademark of the Scratch Foundation, which does not endorse this
+studio.
+
+The sprites, backdrops and sounds in its library are Scratch's, under the
+Creative Commons Attribution-ShareAlike 2.0 licence
+(https://creativecommons.org/licenses/by-sa/2.0/): Scratch is developed by the
+Lifelong Kindergarten Group at the MIT Media Lab. See https://scratch.mit.edu.
+
+Whoever runs a changed copy of this studio for other people must offer them
+its source, and say here where it is.

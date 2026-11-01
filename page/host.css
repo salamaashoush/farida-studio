@@ -1,0 +1,36 @@
+html,
+body,
+#studio {
+  height: 100%;
+  margin: 0;
+}
+
+#studio > * {
+  height: 100%;
+}
+
+/* AGPL section 13: everyone using the studio can reach its source. It sits
+   at the end of the menu bar, which the editor leaves empty. */
+.source {
+  position: fixed;
+  inset-block-start: 15px;
+  inset-inline-end: 14px;
+  z-index: 1000;
+  font:
+    12px/1.4 system-ui,
+    sans-serif;
+  color: #fff;
+  opacity: 0.8;
+}
+
+/* A player has no menu bar, so the link moves to the foot of the stage. */
+.player .source {
+  inset-block-start: auto;
+  inset-block-end: 4px;
+  color: #575e75;
+}
+
+/* Tutorials stream from Wistia, which the studio's policy never reaches. */
+#studio .tutorials-button {
+  display: none;
+}

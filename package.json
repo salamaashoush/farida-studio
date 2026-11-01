@@ -1,0 +1,35 @@
+{
+  "name": "@faridalms/studio",
+  "version": "1.0.0",
+  "description": "The Scratch editor as a page a learning platform frames, which hands it projects and keeps them",
+  "license": "AGPL-3.0-only",
+  "author": "Salama Ashoush",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salamaashoush/farida-studio.git"
+  },
+  "type": "module",
+  "bin": {
+    "farida-studio": "./install.ts"
+  },
+  "exports": {
+    ".": "./install.ts"
+  },
+  "files": [
+    "page",
+    "install.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "bun dev.ts",
+    "test": "bun test"
+  },
+  "engines": {
+    "bun": ">=1.4"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.0",
+    "typescript": "^5"
+  }
+}
