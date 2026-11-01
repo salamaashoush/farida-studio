@@ -31,10 +31,10 @@ import {
 } from "node:fs/promises";
 import { join, resolve } from "node:path";
 
-export const SCRATCH_GUI_VERSION = "15.2.0";
+export const SCRATCH_GUI_VERSION = "15.3.0";
 const EDITOR = `https://registry.npmjs.org/@scratch/scratch-gui/-/scratch-gui-${SCRATCH_GUI_VERSION}.tgz`;
 const SHA512 =
-  "ZjKknkK6Suh0qtfCgaKNUt2Ilz/j6pWdTn6+Brrb2NLn8iXviccLfiSezAFvXqFqWaOMjac0sMfe8JpKkkOPTg==";
+  "Iaa4Su+CA8pnZiGmBuN6ezLwNK06cfnH9zmVVKdPxRbGWbOTHGcIZ92C2gsvi51ArbKfPwcHboTQC4N3vs+maQ==";
 const ASSETS = "https://cdn.assets.scratch.mit.edu/internalapi/asset";
 const CONCURRENCY = 4;
 const ATTEMPTS = 5;

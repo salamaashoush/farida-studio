@@ -9,7 +9,7 @@ it is built on the Scratch editor, which is under the AGPL.
 - `page/`: the page a host serves (`index.html`, `host.js`, `host.css`,
   the logo, and `SOURCE.txt`, the notice its Source link opens).
 - `install.ts`: puts the page, the Scratch editor (`@scratch/scratch-gui`
-  15.2.0, pinned by checksum, unmodified) and its library of sprites,
+  15.3.0, pinned by checksum, unmodified) and its library of sprites,
   backdrops and sounds (about 1,350 files, 60 MB) into one directory.
 - `dev.ts`: the studio framed by another site, to try it.
 
@@ -30,7 +30,7 @@ The demo frames the studio from another site and keeps the project in
 Add it as a dependency straight from GitHub, pinned to a release:
 
 ```sh
-bun add github:salamaashoush/farida-studio#v1.0.0
+bun add github:salamaashoush/farida-studio#v1.1.0
 bunx farida-studio vendor/studio   # page/, editor/, library/
 ```
 
