@@ -53,9 +53,9 @@ const FRAME = `<!doctype html>
   </head>
   <body>
     <nav>
-      <button id="save">Save</button>
-      <button id="start">Green flag</button>
-      <button id="stop">Stop</button>
+      <button id="save" disabled>Save</button>
+      <button id="start" disabled>Green flag</button>
+      <button id="stop" disabled>Stop</button>
       <label><input id="player" type="checkbox" /> Player</label>
       <label><input id="arabic" type="checkbox" /> Arabic</label>
       <span id="said"></span>
@@ -70,6 +70,10 @@ const FRAME = `<!doctype html>
       const STUDIO = ${JSON.stringify(STUDIO)};
       const frame = document.getElementById("studio");
       const said = document.getElementById("said");
+      const buttons = ["save", "start", "stop"].map((id) => document.getElementById(id));
+      // Until the studio says it has loaded, the frame may still be the blank
+      // page it starts as, which has this page's origin, not the studio's.
+      const usable = (yes) => buttons.forEach((button) => (button.disabled = !yes));
       const send = (message, transfer = []) =>
         frame.contentWindow.postMessage({ source: "farida", ...message }, STUDIO, transfer);
       const kept = () => {
@@ -78,6 +82,7 @@ const FRAME = `<!doctype html>
       };
       function open() {
         said.textContent = "";
+        usable(false);
         const query = new URLSearchParams({ parent: location.origin });
         if (document.getElementById("player").checked) query.set("mode", "player");
         if (document.getElementById("arabic").checked) query.set("locale", "ar");
@@ -87,6 +92,7 @@ const FRAME = `<!doctype html>
         if (event.origin !== STUDIO || event.data?.source !== "farida-scratch") return;
         const message = event.data;
         said.textContent = message.type;
+        if (message.type === "loaded") usable(true);
         if (message.type === "ready") send({ type: "load", project: kept() });
         if (message.type === "saved")
           localStorage.setItem("project", new Uint8Array(message.project).toBase64());

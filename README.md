@@ -66,6 +66,12 @@ Frame it with the framing page's origin:
 ></iframe>
 ```
 
+Chrome warns that a frame with both `allow-scripts` and `allow-same-origin`
+can escape its sandbox. It can only when it has the same origin as the page
+around it, which is why the studio must be on another site: that is the
+boundary. It keeps its own origin for the storage and workers the editor
+needs.
+
 - `parent` (required): the framing page's origin. The studio answers only
   messages from its parent window at that origin, and sends only to it.
 - `locale`: `en` (default) or `ar`, which also turns the page right to left.
